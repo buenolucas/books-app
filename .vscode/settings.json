@@ -1,0 +1,5 @@
+{
+    "javascript.format.enable": false,
+    "jest.pathToConfig": "./jest.config.js",
+    "editor.formatOnSave": true
+}
