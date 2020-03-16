@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox should render without issues 1`] = `
+<CheckBox
+  checked={false}
+  theme={
+    Object {
+      "colors": Object {
+        "background": "#FFFFFF",
+        "buttonDefault": "#effaff",
+        "buttonPrimary": "#56c8ff",
+        "darkGrey": "#2d2d2e",
+        "darkSky": "#47b7ed",
+        "ice": "#f2fdf6",
+        "lightPeriwinkle": "#dee1e6",
+        "paleGrey": "#effaff",
+        "paleGreyTwo": "#f3f6fd",
+        "primary": "#56c8ff",
+        "primaryVariant": "#47b7ed",
+        "robinEgg": "#56c8ff",
+        "slateGray": "#595a5c",
+        "steel": "#86878b",
+        "text": "#595a5c",
+        "white": "#FFFFFF",
+      },
+      "gray": Object {
+        "dark": "#353535",
+        "darker": "#1a1a1a",
+        "darkest": "#121212",
+        "light": "#828282",
+        "lighter": "#cfcfcf",
+        "lightest": "#f8f8f8",
+      },
+      "spacing": Object {
+        "base": 24,
+        "large": 48,
+        "small": 16,
+        "tiny": 8,
+        "xLarge": 64,
+        "xTiny": 4,
+      },
+      "specifications": Object {
+        "bookCoverAspectRation": 0.69402985075,
+        "headerHeight": 56,
+      },
+      "typography": Object {
+        "body": Object {
+          "fontFamily": "Roboto",
+          "fontSize": 14,
+          "fontStyle": "normal",
+          "fontWeight": "400",
+        },
+        "caption1": Object {
+          "fontFamily": "Roboto",
+          "fontSize": 15,
+          "fontStyle": "normal",
+          "fontWeight": "500",
+        },
+        "caption2": Object {
+          "fontFamily": "Roboto",
+          "fontSize": 14,
+          "fontStyle": "normal",
+          "fontWeight": "500",
+        },
+        "header": Object {
+          "fontFamily": "Roboto",
+          "fontSize": 14,
+          "fontStyle": "normal",
+          "fontWeight": "500",
+          "letterSpacing": 0.5,
+        },
+        "input": Object {
+          "fontFamily": "Roboto",
+          "fontSize": 15,
+          "fontStyle": "normal",
+          "fontWeight": "400",
+        },
+        "largeTitle": Object {
+          "fontFamily": "Roboto",
+          "fontSize": 22,
+          "fontStyle": "normal",
+          "fontWeight": "500",
+        },
+      },
+    }
+  }
+/>
+`;
