@@ -1,11 +1,13 @@
 module.exports = {
   preset: 'react-native',
-  collectCoverage: true,
+  collectCoverage: false,
   moduleDirectories: ['node_modules', 'src'],
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
   },
-  setupFiles: ['<rootDir>/jest/setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/jest/setup.js'],
+  //setupFiles: ['<rootDir>/jest/setup.js'],
+  //snapshotSerializers: ['enzyme-to-json/serializer'],
   transformIgnorePatterns: ['node_modules/(?!(jest-)?react-native)'],
-  coveragePathIgnorePatterns: ['/node_modules/', '/jest'],
+  //coveragePathIgnorePatterns: ['/node_modules/', '/jest'],
 };
