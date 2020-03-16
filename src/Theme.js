@@ -68,6 +68,7 @@ Theme.typography = {
     letterSpacing: 0.5,
     ...getFontStyleObject({weight: 'Medium'}),
   },
+
   body: {
     fontSize: 14,
     ...getFontStyleObject({weight: 'Regular'}),
