@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {getSearchBooksUrl, getBookShielf} from './urls';
-import Config from '../../Config';
-import {parseBooksArray} from '../../utils/books';
+import Config from '../Config';
+import {parseBooksArray} from '../utils/books';
 
 const bookshielf = [
   {key: 'adventure', title: 'Aventura', books: null},

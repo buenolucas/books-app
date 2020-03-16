@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components/native';
 import {View, StyleSheet, ActivityIndicator} from 'react-native';
-import FooterLoading from '../FooterLoading';
+import FooterLoading from './FooterLoading';
 import BooksTileList from './BooksTileList';
 import withRefetch from '../hoc/withRefetch';
 import {filterDuplicateBooks} from '../../utils/books';

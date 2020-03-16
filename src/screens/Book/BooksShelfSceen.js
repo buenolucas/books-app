@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import {Typography, Button} from '../../components/common';
 import BookShelf from '../../components/books/BookShelf';
 import {FlatList} from 'react-native-gesture-handler';
-import {fetchCategoriesBooks} from '../../components/api/books';
+import {fetchCategoriesBooks} from '../../api/books';
 import RouteNames from '../../RouteNames';
 
 const Container = styled.View`

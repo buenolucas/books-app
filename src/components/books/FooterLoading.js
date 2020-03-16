@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, ActivityIndicator} from 'react-native';
-import Theme from '../Theme';
+import Theme from '../../Theme';
 
 class FooterLoading extends React.PureComponent {
   render() {
