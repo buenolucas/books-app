@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography Rendering should match to snapshot 1`] = `
+<Styled(Text)
+  style={
+    Array [
+      Object {
+        "fontFamily": "Roboto",
+        "fontSize": 14,
+        "fontStyle": "normal",
+        "fontWeight": "400",
+      },
+      undefined,
+    ]
+  }
+  type="body"
+>
+  test text
+</Styled(Text)>
+`;

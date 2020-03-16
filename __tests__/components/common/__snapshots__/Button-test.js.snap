@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Rendering renders without crashing 1`] = `
+<Styled(TouchableOpacity)
+  onPress={[MockFunction]}
+>
+  <Typography
+    primary={true}
+    style={
+      Object {
+        "color": "#FFFFFF",
+      }
+    }
+    type="caption1"
+  >
+    button render test
+  </Typography>
+</Styled(TouchableOpacity)>
+`;
+
+exports[`Button Rendering should render with color variation 1`] = `
+<Styled(TouchableOpacity)
+  onPress={[MockFunction]}
+>
+  <Typography
+    primary={true}
+    style={
+      Object {
+        "color": "#FFFFFF",
+      }
+    }
+    type="caption1"
+  >
+    button render test
+  </Typography>
+</Styled(TouchableOpacity)>
+`;
