@@ -79,6 +79,10 @@ Theme.typography = {
     fontSize: 15,
     ...getFontStyleObject({weight: 'Regular'}),
   },
+  caption1: {
+    fontSize: 15,
+    ...getFontStyleObject({weight: 'Medium'}),
+  },
   caption2: {
     fontSize: 14,
     ...getFontStyleObject({weight: 'Medium'}),
