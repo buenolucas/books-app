@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1584323083124" clover="3.2.0">
+  <project timestamp="1584323083124" name="All files">
+    <metrics statements="41" coveredstatements="34" conditionals="81" coveredconditionals="50" methods="33" coveredmethods="22" elements="155" coveredelements="106" complexity="0" loc="41" ncloc="41" packages="2" files="3" classes="3"/>
+    <package name="src">
+      <metrics statements="9" coveredstatements="9" conditionals="63" coveredconditionals="38" methods="17" coveredmethods="14"/>
+      <file name="App.js" path="/Users/capi/arvore/ArvoreBooks/src/App.js">
+        <metrics statements="9" coveredstatements="9" conditionals="63" coveredconditionals="38" methods="17" coveredmethods="14"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="30" type="cond" truecount="38" falsecount="25"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.common">
+      <metrics statements="32" coveredstatements="25" conditionals="18" coveredconditionals="12" methods="16" coveredmethods="8"/>
+      <file name="Button.js" path="/Users/capi/arvore/ArvoreBooks/src/components/common/Button.js">
+        <metrics statements="16" coveredstatements="10" conditionals="6" coveredconditionals="5" methods="8" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="5" type="cond" truecount="5" falsecount="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+      </file>
+      <file name="Typography.js" path="/Users/capi/arvore/ArvoreBooks/src/components/common/Typography.js">
+        <metrics statements="16" coveredstatements="15" conditionals="12" coveredconditionals="7" methods="8" coveredmethods="5"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="6" count="12" type="cond" truecount="6" falsecount="4"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

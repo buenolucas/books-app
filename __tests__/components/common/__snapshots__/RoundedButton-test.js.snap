@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoundedButton Rendering renders without crashing 1`] = `
+<Styled(TouchableOpacity)
+  onPress={[MockFunction]}
+  primary={false}
+>
+  <Icon
+    i="search"
+  />
+  <Typography
+    style={
+      Object {
+        "marginLeft": 8,
+      }
+    }
+    type="caption2"
+  >
+    button render test
+  </Typography>
+</Styled(TouchableOpacity)>
+`;
