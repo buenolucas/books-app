@@ -5,6 +5,7 @@ import BookShelf from '../../components/books/BookShelf';
 import {FlatList} from 'react-native-gesture-handler';
 import {fetchCategoriesBooks} from '../../api/books';
 import RouteNames from '../../RouteNames';
+import Loading from '../../components/books/Loading';
 
 const Container = styled.View`
   flex: 1;
@@ -48,7 +49,7 @@ class BooksShelfScreen extends React.Component {
     const {loading, bookshielfs} = this.state;
 
     if (loading) {
-      return <Typography>Loading</Typography>;
+      return <Loading />;
     } else {
       return (
         <Container>

@@ -8,14 +8,15 @@ import {bookId} from '../../utils/books';
 import Theme from '../../Theme';
 
 const BooksList = styled.FlatList`
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: ${({theme}) => theme.spacing.tiny}px
+  padding-bottom: ${({theme}) => theme.spacing.tiny}px;
 `;
 
 const BooksListHorizontal = ({books, paddingLeft, isFeatured}) => {
   renderThumb = ({item, index}) => (
     <BookThumb
       book={item}
+      reverseCorners={isFeatured}
       highPriority={index < 5}
       negativeColors={isFeatured}
     />
