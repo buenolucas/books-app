@@ -23,4 +23,9 @@ const AvailableFormats = ({updateFilter, selectedFilters}) => {
   );
 };
 
+AvailableFormats.propTypes = {
+  updateFilter: PropTypes.func.isRequired,
+  selectedFilters: PropTypes.array.isRequired,
+};
+
 export default AvailableFormats;

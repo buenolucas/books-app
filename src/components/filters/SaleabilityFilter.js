@@ -32,5 +32,10 @@ const SaleabilityFilter = ({updateFilter, selectedFilters}) => {
     </Container>
   );
 };
-//FOR_SALE, FREE, NOT_FOR_SALE, or FOR_PREORDER.
+
+SaleabilityFilter.propTypes = {
+  updateFilter: PropTypes.func.isRequired,
+  selectedFilters: PropTypes.array.isRequired,
+};
+
 export default SaleabilityFilter;

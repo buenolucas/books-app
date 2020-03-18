@@ -35,4 +35,9 @@ const PrieceRangeFilter = ({updateFilter, selectedFilters}) => {
   );
 };
 
+PrieceRangeFilter.propTypes = {
+  updateFilter: PropTypes.func.isRequired,
+  selectedFilters: PropTypes.array.isRequired,
+};
+
 export default PrieceRangeFilter;
