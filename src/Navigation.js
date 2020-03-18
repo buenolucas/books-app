@@ -28,7 +28,6 @@ export function BooksSearchNavigation() {
       <MainStack.Screen
         name={RouteNames.BooksResults}
         component={BooksResultsScreen}
-        initialParams={{query: 'fadaputa', itemId: 42}}
         options={{
           header: ({route, navigation}) => (
             <ResultsBar route={route} navigation={navigation} />

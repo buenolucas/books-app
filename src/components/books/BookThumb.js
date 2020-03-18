@@ -30,7 +30,7 @@ const BookTitle = styled.Text`
 
 const BookThumb = ({book, negativeColors, highPriority}) => {
   const renderBook = () => {
-    const hasCover = book.volumeInfo.hasOwnProperty('imageLinks');
+    const hasCover = book.thumbnail ? true : false;
 
     return (
       <>
@@ -38,14 +38,14 @@ const BookThumb = ({book, negativeColors, highPriority}) => {
           <Image
             style={styles.image}
             source={{
-              uri: book.volumeInfo.imageLinks.thumbnail,
+              uri: book.thumbnail,
             }}
           />
         ) : (
           <Image style={styles.image} />
         )}
         <BookTitle numberOfLines={3} negativeColors={negativeColors}>
-          {book.volumeInfo.title}
+          {book.title}
         </BookTitle>
       </>
     );

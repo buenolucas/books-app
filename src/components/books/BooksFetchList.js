@@ -5,10 +5,10 @@ import {View, StyleSheet, ActivityIndicator} from 'react-native';
 import FooterLoading from './FooterLoading';
 import BooksTileList from './BooksTileList';
 import withRefetch from '../hoc/withRefetch';
-import {filterDuplicateBooks} from '../../utils/books';
+import {filterDuplicateBooks, filterBooks} from '../../utils/books';
 import Theme from '../../Theme';
 import RouteNames from '../../RouteNames';
-import {RoundedButton, Icon} from '../common';
+import {RoundedButton, Icon, Typography} from '../common';
 
 const Container = styled.View`
   flex: 1;
@@ -18,6 +18,7 @@ const Container = styled.View`
 const Actions = styled.View`
   align-self: flex-end;
   margin-bottom: 8px;
+  flex-direction: row;
   margin-top: ${({theme}) => theme.spacing.base}px;
   padding-top: ${({theme}) => theme.spacing.tiny}px;
   padding-bottom: ${({theme}) => theme.spacing.tiny}px;
@@ -37,6 +38,7 @@ class BooksFetchList extends React.Component {
     this.totalPages = Infinity;
     this.totalItems = Infinity;
     this.pageSize = 24;
+
     // eslint-disable-next-line
     requestAnimationFrame(() => {
       this.fetchFirstPage({isInitial: true});
@@ -48,7 +50,9 @@ class BooksFetchList extends React.Component {
       this.fetchFirstPage({nextProps});
       return false;
     }
-
+    if (this.props.filters != nextProps.filters) {
+      return true;
+    }
     if (this.state === nextState && this.props === nextProps) {
       return false;
     }
@@ -123,13 +127,14 @@ class BooksFetchList extends React.Component {
   );
 
   renderListHeader = () => {
+    const {hasFilters, onFiltersPress} = this.props;
     return (
       <Actions>
         <RoundedButton
           label="Filtrar"
           icon={<Icon i="filter" />}
           primary
-          onPress={() => this.props.navigation.navigate(RouteNames.BooksFilter)}
+          onPress={() => onFiltersPress()}
         />
       </Actions>
     );
@@ -140,8 +145,15 @@ class BooksFetchList extends React.Component {
   };
 
   renderBookList = () => {
-    const {withRefresh, withPagination, ...props} = this.props;
+    const {
+      withRefresh,
+      withPagination,
+      hasFilters,
+      filters,
+      ...props
+    } = this.props;
     const {books, refreshing, isPaginationLoading} = this.state;
+
     const refreshProps = withRefresh
       ? {refreshing, onRefresh: this.onRefresh}
       : {};
@@ -153,9 +165,11 @@ class BooksFetchList extends React.Component {
         }
       : {};
 
+    const booksCollection = hasFilters ? filterBooks(books, filters) : books;
+
     return (
       <BooksTileList
-        books={books}
+        books={booksCollection}
         ListHeaderComponent={this.renderListHeader}
         ListFooterComponent={this.renderListFooter}
         {...refreshProps}
@@ -167,6 +181,7 @@ class BooksFetchList extends React.Component {
 
   render() {
     const {isInitialLoading} = this.state;
+
     return (
       <Container>
         {isInitialLoading
@@ -180,8 +195,12 @@ class BooksFetchList extends React.Component {
 BooksFetchList.propTypes = {
   fetchFunction: PropTypes.func.isRequired,
   query: PropTypes.string.isRequired,
+  filters: PropTypes.object,
   withRefresh: PropTypes.bool,
   withPagination: PropTypes.bool,
+  onFilterPress: PropTypes.func,
+  filters: PropTypes.object,
+  hasFilters: PropTypes.bool,
 };
 
 BooksFetchList.defaultProps = {

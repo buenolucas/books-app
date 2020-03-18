@@ -81,6 +81,12 @@ exports[`CheckBox should render without issues 1`] = `
           "fontStyle": "normal",
           "fontWeight": "500",
         },
+        "title": Object {
+          "fontFamily": "Roboto",
+          "fontSize": 18,
+          "fontStyle": "normal",
+          "fontWeight": "500",
+        },
       },
     }
   }
