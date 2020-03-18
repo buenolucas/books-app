@@ -9,16 +9,11 @@ const PREVIEW_WIDTH = width * 0.27;
 
 const TouchableShelf = styled.TouchableOpacity`
   width: ${PREVIEW_WIDTH}px;
-  margin-left: 8px;
-  margin-right: 8px;
-  padding-bottom: 8px;
+  margin-left: ${({theme}) => theme.spacing.tiny}px;
+  margin-right: ${({theme}) => theme.spacing.tiny}px;
+  padding-bottom: ${({theme}) => theme.spacing.tiny}px;
 `;
-const Thumb = styled.Image`
-  width: 93px;
-  height: 138px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-`;
+
 const BookTitle = styled.Text`
   color: ${({negativeColors, theme}) => {
     return negativeColors ? theme.colors.white : theme.colors.text;
@@ -28,21 +23,26 @@ const BookTitle = styled.Text`
   height: 28px;
 `;
 
-const BookThumb = ({book, negativeColors, highPriority}) => {
+const BookThumb = ({book, negativeColors, reverseCorners}) => {
   const renderBook = () => {
     const hasCover = book.thumbnail ? true : false;
-
+    const image = Object.assign({}, styles.image);
+    if (reverseCorners) {
+      image.borderTopRightRadius = image.borderBottomLeftRadius = 16;
+    } else {
+      image.borderTopRightRadius = image.borderBottomRightRadius = 16;
+    }
     return (
       <>
         {hasCover ? (
           <Image
-            style={styles.image}
+            style={image}
             source={{
               uri: book.thumbnail,
             }}
           />
         ) : (
-          <Image style={styles.image} />
+          <Image style={image} />
         )}
         <BookTitle numberOfLines={3} negativeColors={negativeColors}>
           {book.title}
@@ -64,15 +64,13 @@ const styles = StyleSheet.create({
   image: {
     width: PREVIEW_WIDTH,
     aspectRatio: Theme.specifications.bookCoverAspectRation,
-    borderTopRightRadius: 8,
-    borderBottomRightRadius: 8,
     backgroundColor: Theme.colors.transparentBlack,
   },
 });
 
 BookThumb.propTypes = {
   movie: PropTypes.object,
-  highPriority: PropTypes.bool,
+  reverseCorners: PropTypes.bool,
   style: PropTypes.any,
 };
 

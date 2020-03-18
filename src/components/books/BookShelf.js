@@ -6,7 +6,8 @@ import Theme from '../../Theme';
 import {Typography, Icon} from '../common';
 
 const ShelfContainer = styled.View`
-  background-color: ${props => (props.isFeatured ? '#47B7ED' : 'transparent')};
+  background-color: ${props =>
+    props.isFeatured ? props.theme.colors.darkSky : 'transparent'};
   margin-top: ${({theme}) => theme.spacing.small}px;
   margin-bottom: ${({theme}) => theme.spacing.small}px;
   width: 100%;
@@ -14,8 +15,8 @@ const ShelfContainer = styled.View`
   ${props =>
     props.isFeatured &&
     css`
-      padding-top: 24px;
-      padding-bottom: 24px;
+      padding-top: ${({theme}) => theme.spacing.small}px;
+      padding-bottom: ${({theme}) => theme.spacing.small}px;
     `}
 `;
 const TouchableShelf = styled.TouchableOpacity`

@@ -22,7 +22,7 @@ function BooksResultsScreen({route, navigation}) {
       <BooksFetchList
         navigation={navigation}
         fetchFunction={fetchSearchBooks}
-        query={'Aventura'}
+        query={route.params.query}
         hasFilters={route.params.filters && true}
         filters={route.params.filters || {}}
         onFiltersPress={onFiltersPress}
