@@ -19,7 +19,7 @@ const ButtonContainer = styled.TouchableOpacity`
 `;
 
 const RoundedButton = props => {
-  const {label, icon, primary, iconPosition, onPress} = props;
+  const {label, icon, primary, iconPosition, style, onPress} = props;
   const typograpyStyle = {};
   if (primary) {
     typograpyStyle.color = Theme.colors.white;
@@ -31,8 +31,9 @@ const RoundedButton = props => {
       typograpyStyle.marginRight = Theme.spacing.tiny;
     }
   }
+
   return (
-    <ButtonContainer primary={primary} onPress={onPress}>
+    <ButtonContainer primary={primary} onPress={onPress} style={style}>
       {icon && iconPosition == 'left' && icon}
       {label && (
         <Typography type="caption2" style={typograpyStyle}>
@@ -49,6 +50,7 @@ RoundedButton.propTypes = {
   label: PropTypes.string,
   primary: PropTypes.bool,
   iconPosition: PropTypes.string,
+  style: PropTypes.object,
 };
 
 RoundedButton.defaultProps = {
