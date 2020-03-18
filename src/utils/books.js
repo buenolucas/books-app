@@ -10,12 +10,12 @@ export const filterDuplicateBooks = books =>
 const parseBook = b => {
   const book = {
     id: b.id,
+    title: b.volumeInfo.title,
+    description: b.volumeInfo.description,
     thumbnail:
       b.volumeInfo.imageLinks && b.volumeInfo.imageLinks.thumbnail
         ? b.volumeInfo.imageLinks && b.volumeInfo.imageLinks.thumbnail
         : null,
-    title: b.volumeInfo.title,
-    description: b.volumeInfo.description,
     authors: b.volumeInfo.authors,
     publisher: b.volumeInfo.publisher,
     pageCount: b.volumeInfo.pageCount,
@@ -24,7 +24,8 @@ const parseBook = b => {
       epub: b.accessInfo.epub.isAvailable,
       pdf: b.accessInfo.pdf.isAvailable,
     },
-    priece: b.saleInfo.listPrice,
+    priece: b.saleInfo.listPrice ? b.saleInfo.listPrice.amount : 0,
+    listPriece: b.saleInfo.listPrice,
     saleability: b.saleInfo.saleability,
   };
   return {...book};
