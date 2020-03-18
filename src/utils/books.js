@@ -10,7 +10,10 @@ export const filterDuplicateBooks = books =>
 const parseBook = b => {
   const book = {
     id: b.id,
-    thumbnail: b.volumeInfo.imageLinks.thumbnail,
+    thumbnail:
+      b.volumeInfo.imageLinks && b.volumeInfo.imageLinks.thumbnail
+        ? b.volumeInfo.imageLinks && b.volumeInfo.imageLinks.thumbnail
+        : null,
     title: b.volumeInfo.title,
     description: b.volumeInfo.description,
     authors: b.volumeInfo.authors,
