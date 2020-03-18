@@ -69,6 +69,11 @@ Theme.typography = {
     ...getFontStyleObject({weight: 'Medium'}),
   },
 
+  title: {
+    fontSize: 18,
+    ...getFontStyleObject({weight: 'Medium'}),
+  },
+
   body: {
     fontSize: 14,
     ...getFontStyleObject({weight: 'Regular'}),
