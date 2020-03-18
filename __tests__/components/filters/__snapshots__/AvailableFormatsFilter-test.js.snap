@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AvailableFormatsFilter Rendering renders without crashing 1`] = `
+<Styled(View)>
+  <Typography
+    primary={true}
+    type="title"
+  >
+    Formatos Disponíveis
+  </Typography>
+  <WithTheme(CheckBox)
+    checked={false}
+    label="Epub"
+    onPress={[Function]}
+  />
+  <WithTheme(CheckBox)
+    checked={false}
+    label="PDF"
+    onPress={[Function]}
+  />
+</Styled(View)>
+`;

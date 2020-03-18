@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrieceRangeFilter Rendering renders without crashing 1`] = `
+<Styled(View)>
+  <Typography
+    primary={true}
+    type="title"
+  >
+    Preço
+  </Typography>
+  <WithTheme(CheckBox)
+    checked={false}
+    label="de R$0 até R$30"
+    onPress={[Function]}
+  />
+  <WithTheme(CheckBox)
+    checked={false}
+    label="de R$31 até R$50"
+    onPress={[Function]}
+  />
+  <WithTheme(CheckBox)
+    checked={false}
+    label="de R$51 até R$100"
+    onPress={[Function]}
+  />
+  <WithTheme(CheckBox)
+    checked={false}
+    label="Mais de R$100"
+    onPress={[Function]}
+  />
+</Styled(View)>
+`;
