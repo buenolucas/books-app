@@ -30,7 +30,6 @@ class BooksFilterScreen extends React.Component {
   constructor(props) {
     super(props);
     const filters = props.route.params.filters || {};
-    console.log('Abre!!!');
     this.state = {
       availableFormats: filters.availableFormats || [],
       priece: filters.priece || [],
