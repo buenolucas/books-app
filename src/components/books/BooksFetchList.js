@@ -15,6 +15,12 @@ const Container = styled.View`
   align-items: center;
   justify-content: center;
 `;
+const FullContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding-top: 140px;
+`;
 const Actions = styled.View`
   align-self: flex-end;
   margin-bottom: 8px;
@@ -49,9 +55,6 @@ class BooksFetchList extends React.Component {
     if (this.props.fetchFunction !== nextProps.fetchFunction) {
       this.fetchFirstPage({nextProps});
       return false;
-    }
-    if (this.props.filters != nextProps.filters) {
-      return true;
     }
     if (this.state === nextState && this.props === nextProps) {
       return false;
@@ -119,6 +122,17 @@ class BooksFetchList extends React.Component {
     this.setState({isPaginationLoading: false, ...booksProps});
   }
 
+  renderListEmpty = () => {
+    return (
+      <FullContainer>
+        <Typography type="title">Nada encontrado.</Typography>
+        <Typography type="body">
+          Você deve fazer outra busca ou alterar os filtros.
+        </Typography>
+      </FullContainer>
+    );
+  };
+
   renderLoadingIndicator = () => (
     <ActivityIndicator
       size={Theme.specifications.activityIndicatorSize}
@@ -127,7 +141,7 @@ class BooksFetchList extends React.Component {
   );
 
   renderListHeader = () => {
-    const {hasFilters, onFiltersPress} = this.props;
+    const {hasFilters, onFiltersPress, onClearFilter} = this.props;
     return (
       <Actions>
         <RoundedButton
@@ -136,6 +150,15 @@ class BooksFetchList extends React.Component {
           primary
           onPress={() => onFiltersPress()}
         />
+        {hasFilters && (
+          <RoundedButton
+            label="Filtrar"
+            iconPosition="right"
+            icon={<Icon i="cancel" />}
+            onPress={() => onClearFilter()}
+            style={{marginLeft: Theme.spacing.xTiny}}
+          />
+        )}
       </Actions>
     );
   };
@@ -166,12 +189,12 @@ class BooksFetchList extends React.Component {
       : {};
 
     const booksCollection = hasFilters ? filterBooks(books, filters) : books;
-
     return (
       <BooksTileList
         books={booksCollection}
         ListHeaderComponent={this.renderListHeader}
         ListFooterComponent={this.renderListFooter}
+        ListEmptyComponent={this.renderListEmpty}
         {...refreshProps}
         {...paginationProps}
         {...props}

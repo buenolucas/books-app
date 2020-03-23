@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components/native';
+import styled, {withTheme} from 'styled-components/native';
 import Theme from '../../Theme';
 import {Dimensions, StyleSheet, Image} from 'react-native';
-
+import FastImage from 'react-native-fast-image';
 const {width} = Dimensions.get('window');
 const PREVIEW_WIDTH = width * 0.27;
 
-const TouchableShelf = styled.TouchableOpacity`
+const TouchableShelf = styled.View`
   width: ${PREVIEW_WIDTH}px;
   margin-left: ${({theme}) => theme.spacing.tiny}px;
   margin-right: ${({theme}) => theme.spacing.tiny}px;
@@ -20,12 +20,14 @@ const BookTitle = styled.Text`
   }};
   font-size: 12px;
   margin-top: 10px;
-  height: 28px;
+  height: 34px;
 `;
 
-const BookThumb = ({book, negativeColors, reverseCorners}) => {
+const BookThumb = ({book, negativeColors, reverseCorners, highPriority}) => {
   const renderBook = () => {
-    const hasCover = book.thumbnail ? true : false;
+    const priority = highPriority
+      ? FastImage.priority.high
+      : FastImage.priority.normal;
     const image = Object.assign({}, styles.image);
     if (reverseCorners) {
       image.borderTopRightRadius = image.borderBottomLeftRadius = 16;
@@ -34,16 +36,14 @@ const BookThumb = ({book, negativeColors, reverseCorners}) => {
     }
     return (
       <>
-        {hasCover ? (
-          <Image
-            style={image}
-            source={{
-              uri: book.thumbnail,
-            }}
-          />
-        ) : (
-          <Image style={image} />
-        )}
+        <FastImage
+          style={image}
+          source={{
+            uri: book.thumbnail,
+            priority: priority,
+          }}
+          resizeMode={FastImage.resizeMode.cover}
+        />
         <BookTitle numberOfLines={3} negativeColors={negativeColors}>
           {book.title}
         </BookTitle>
@@ -62,7 +62,7 @@ const BookThumb = ({book, negativeColors, reverseCorners}) => {
 
 const styles = StyleSheet.create({
   image: {
-    width: PREVIEW_WIDTH,
+    width: '100%',
     aspectRatio: Theme.specifications.bookCoverAspectRation,
     backgroundColor: Theme.colors.transparentBlack,
   },
@@ -74,4 +74,4 @@ BookThumb.propTypes = {
   style: PropTypes.any,
 };
 
-export default BookThumb;
+export default withTheme(BookThumb);
