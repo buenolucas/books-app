@@ -20,7 +20,7 @@ const BookTitle = styled.Text`
   }};
   font-size: 12px;
   margin-top: 10px;
-  height: 28px;
+  height: 34px;
 `;
 
 const BookThumb = ({book, negativeColors, reverseCorners, highPriority}) => {
