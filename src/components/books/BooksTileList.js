@@ -17,7 +17,7 @@ const TileListSkin = styled.FlatList`
 
 const BooksTileList = props => {
   renderThumb = ({item, index}) => (
-    <BookThumb book={item} highPriority={index < 5} />
+    <BookThumb book={item} highPriority={index < 15} />
   );
 
   const {books} = props;

@@ -13,13 +13,6 @@ const Container = styled.View`
   padding-top: ${({theme}) => theme.spacing.small}px;
 `;
 
-const bookshielf = [
-  {key: 'adventure', title: 'Aventura', books: []},
-  {key: 'kids', title: 'Infantil', books: []},
-  {key: 'featured', title: 'Destaques', isFeatured: true, books: []},
-  {key: 'action', title: 'Ação', books: []},
-];
-
 class BooksShelfScreen extends React.Component {
   state = {
     books: [],
@@ -47,7 +40,6 @@ class BooksShelfScreen extends React.Component {
 
   render() {
     const {loading, bookshielfs} = this.state;
-
     if (loading) {
       return <Loading />;
     } else {
